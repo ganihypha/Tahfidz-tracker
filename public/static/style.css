@@ -1,0 +1,153 @@
+/* Tahfidz Tracker Pro - Premium Styles */
+
+* { -webkit-tap-highlight-color: transparent; }
+body { font-family: 'Poppins', 'Inter', sans-serif; }
+.arabic-text { font-family: 'Amiri', serif; direction: rtl; }
+
+/* Glass morphism */
+.glass-card {
+  background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+.dark .glass-card {
+  background: rgba(0,0,0,0.2);
+  border-color: rgba(255,255,255,0.05);
+}
+
+/* Animations */
+.page-transition { animation: fadeSlideUp 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94); }
+@keyframes fadeSlideUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+
+.slide-up { animation: slideUp 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94); }
+@keyframes slideUp { from { opacity: 0; transform: translateY(100%); } to { opacity: 1; transform: translateY(0); } }
+
+@keyframes pulse-glow { 0%, 100% { box-shadow: 0 0 8px rgba(16, 185, 129, 0.3); } 50% { box-shadow: 0 0 24px rgba(16, 185, 129, 0.6); } }
+.glow { animation: pulse-glow 2s infinite; }
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+.shimmer {
+  background: linear-gradient(90deg, transparent 25%, rgba(255,255,255,0.1) 50%, transparent 75%);
+  background-size: 200% 100%;
+  animation: shimmer 2s infinite;
+}
+
+@keyframes float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-6px); } }
+.float { animation: float 3s ease-in-out infinite; }
+
+@keyframes confetti {
+  0% { opacity:1; transform: translateY(0) rotate(0deg); }
+  100% { opacity:0; transform: translateY(-100px) rotate(720deg); }
+}
+
+.streak-fire { animation: flicker 0.8s infinite alternate; }
+@keyframes flicker { from { opacity: 0.7; transform: scale(0.95); } to { opacity: 1; transform: scale(1.05); } }
+
+/* Progress ring animation */
+.progress-ring { transition: stroke-dashoffset 0.8s cubic-bezier(0.4, 0, 0.2, 1); }
+
+/* Quality bar animation */
+.quality-bar { transition: width 0.6s cubic-bezier(0.4, 0, 0.2, 1); }
+
+/* Card hover effects */
+.card-hover { transition: all 0.25s ease; }
+.card-hover:hover { transform: translateY(-3px); box-shadow: 0 12px 32px rgba(0,0,0,0.08); }
+.card-hover:active { transform: translateY(-1px); }
+
+.dark .card-hover:hover { box-shadow: 0 12px 32px rgba(0,0,0,0.3); }
+
+/* Nav styles */
+.nav-item { color: #9ca3af; transition: all 0.2s ease; }
+.nav-item.active { color: #059669; background: rgba(16,185,129,0.1); }
+.dark .nav-item { color: #6b7280; }
+.dark .nav-item.active { color: #34d399; background: rgba(52,211,153,0.1); }
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 3px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #a7f3d0; border-radius: 4px; }
+.dark ::-webkit-scrollbar-thumb { background: #374151; }
+
+/* Toast */
+.toast-notification { animation: toastIn 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94); }
+@keyframes toastIn { from { opacity: 0; transform: translate(-50%, -20px); } to { opacity: 1; transform: translate(-50%, 0); } }
+
+/* Tier badges */
+.tier-free { background: linear-gradient(135deg, #e5e7eb, #d1d5db); color: #374151; }
+.tier-pro { background: linear-gradient(135deg, #fbbf24, #f59e0b); color: #78350f; }
+.tier-premium { background: linear-gradient(135deg, #8b5cf6, #6d28d9); color: white; }
+
+/* Achievement card */
+.achievement-locked { filter: grayscale(1); opacity: 0.4; }
+.achievement-unlocked { animation: achievementPop 0.5s cubic-bezier(0.36, 0.07, 0.19, 0.97); }
+@keyframes achievementPop { 0% { transform: scale(0.8); } 50% { transform: scale(1.1); } 100% { transform: scale(1); } }
+
+/* Ripple effect */
+.ripple { position: relative; overflow: hidden; }
+.ripple::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at var(--x, 50%) var(--y, 50%), rgba(255,255,255,0.3) 0%, transparent 60%);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.ripple:active::after { opacity: 1; }
+
+/* Modal styles */
+.modal-content {
+  background: white;
+  border-radius: 1.5rem 1.5rem 0 0;
+  max-height: 85vh;
+  overflow-y: auto;
+}
+.dark .modal-content {
+  background: #1a2332;
+}
+
+/* Input styles */
+input, select, textarea {
+  transition: all 0.2s ease;
+}
+input:focus, select:focus, textarea:focus {
+  transform: scale(1.01);
+}
+
+/* Skeleton loading */
+.skeleton {
+  background: linear-gradient(90deg, #f3f4f6 25%, #e5e7eb 50%, #f3f4f6 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: 0.5rem;
+}
+.dark .skeleton {
+  background: linear-gradient(90deg, #1e293b 25%, #334155 50%, #1e293b 75%);
+  background-size: 200% 100%;
+}
+
+/* Juz grid cell */
+.juz-cell {
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+.juz-cell:hover {
+  transform: scale(1.15);
+  z-index: 10;
+}
+
+/* Counter animation */
+@keyframes countUp {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.count-up { animation: countUp 0.5s ease forwards; }
+
+/* Safe area for bottom nav */
+@supports (padding-bottom: env(safe-area-inset-bottom)) {
+  #bottom-nav { padding-bottom: env(safe-area-inset-bottom); }
+  #app { padding-bottom: calc(5rem + env(safe-area-inset-bottom)); }
+}
